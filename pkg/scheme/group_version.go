@@ -1,7 +1,3 @@
-// Copyright 2020 Lingfei Kong <colin404@foxmail.com>. All rights reserved.
-// Use of this source code is governed by a MIT style
-// license that can be found in the LICENSE file.
-
 package scheme
 
 import (
@@ -197,7 +193,8 @@ func (gv GroupVersion) Identifier() string {
 // if none of the options match the group. It prefers a match to group and version over just group.
 // TODO: Move GroupVersion to a package under pkg/runtime, since it's used by scheme.
 // TODO: Introduce an adapter type between GroupVersion and runtime.GroupVersioner, and use LegacyCodec(GroupVersion)
-//   in fewer places.
+//
+//	in fewer places.
 func (gv GroupVersion) KindForGroupVersionKinds(kinds []GroupVersionKind) (target GroupVersionKind, ok bool) {
 	for _, gvk := range kinds {
 		if gvk.Group == gv.Group && gvk.Version == gv.Version {
@@ -245,7 +242,8 @@ func (gv GroupVersion) WithResource(resource string) GroupVersionResource {
 // GroupVersions can be used to represent a set of desired group versions.
 // TODO: Move GroupVersions to a package under pkg/runtime, since it's used by scheme.
 // TODO: Introduce an adapter type between GroupVersions and runtime.GroupVersioner, and use LegacyCodec(GroupVersion)
-//   in fewer places.
+//
+//	in fewer places.
 type GroupVersions []GroupVersion
 
 // Identifier implements runtime.GroupVersioner interface.

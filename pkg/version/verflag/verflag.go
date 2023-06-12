@@ -1,7 +1,3 @@
-// Copyright 2020 Lingfei Kong <colin404@foxmail.com>. All rights reserved.
-// Use of this source code is governed by a MIT style
-// license that can be found in the LICENSE file.
-
 // Package verflag defines utility functions to handle command line flags
 // related to version of IAM.
 package verflag
@@ -13,7 +9,7 @@ import (
 
 	flag "github.com/spf13/pflag"
 
-	"github.com/marmotedu/component-base/pkg/version"
+	"github.com/huhouhua/component-base/pkg/version"
 )
 
 type versionValue int

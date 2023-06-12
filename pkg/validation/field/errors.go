@@ -1,7 +1,3 @@
-// Copyright 2020 Lingfei Kong <colin404@foxmail.com>. All rights reserved.
-// Use of this source code is governed by a MIT style
-// license that can be found in the LICENSE file.
-
 package field
 
 import (
@@ -10,9 +6,9 @@ import (
 	"strconv"
 	"strings"
 
-	utilerrors "github.com/marmotedu/errors"
+	utilerrors "github.com/huhouhua/errors"
 
-	"github.com/marmotedu/component-base/pkg/util/sets"
+	"github.com/huhouhua/component-base/pkg/util/sets"
 )
 
 // Error is an implementation of the 'error' interface, which represents a

@@ -1,6 +1,4 @@
-# Copyright 2020 Lingfei Kong <colin404@foxmail.com>. All rights reserved.
-# Use of this source code is governed by a MIT style
-# license that can be found in the LICENSE file.
+
 
 # This file contains all available configuration options
 # with their default values.
@@ -296,8 +294,8 @@ linters-settings:
       modules:
         - github.com/pkg/errors:
             recommendations:
-              - github.com/marmotedu/errors
-            reason: "`github.com/marmotedu/errors` is the log package used by marmotedu projects."
+              - github.com/huhouhua/errors
+            reason: "`github.com/huhouhua/errors` is the log package used by huhouhua projects."
       versions:
         - github.com/MakeNowJust/heredoc:
             version: "> 2.0.9"

@@ -1,5 +1,5 @@
 GO := go
-ROOT_PACKAGE := github.com/marmotedu/component-base
+ROOT_PACKAGE := github.com/huhouhua/component-base
 ifeq ($(origin ROOT_DIR),undefined)
 ROOT_DIR := $(shell pwd)
 endif
@@ -48,7 +48,7 @@ lint: lint.verify
 copyright.verify:
 ifeq (,$(shell which addlicense 2>/dev/null))
 	@echo "===========> Installing addlicense"
-	@$(GO) get -u github.com/marmotedu/addlicense
+	@$(GO) get -u github.com/huhouhua/addlicense
 endif
 
 ## verify-copyright: Verify the boilerplate headers for all files.
