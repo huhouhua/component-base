@@ -1,6 +1,7 @@
 package core
 
 import (
+	"fmt"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -59,9 +60,22 @@ func WriteResponse(c *gin.Context, err error, data interface{}) {
 	c.JSON(http.StatusOK, data)
 }
 
-func WriteResponseSuccess(c *gin.Context, resp *SvcResponse[any]) {
-	WriteResponse(c, nil, resp)
+// WriteResponseDetail write an error or the response data into http response body.
+// It use errors.ParseCoder to parse any error into errors.Coder
+// errors.Coder contains error code, user-safe error message and http status code.
+func WriteResponseDetail(c *gin.Context, err error, data interface{}) {
+	if err != nil {
+		log.Errorf("%#+v", err)
+		coder := errors.ParseCoder(err)
+		c.JSON(coder.HTTPStatus(), Error(coder.Code(), fmt.Sprintf("%s,%s", err.Error(), coder.String()), coder.Reference()))
+		return
+	}
+	c.JSON(http.StatusOK, data)
 }
-func WriteResponseError(c *gin.Context, err error) {
-	WriteResponse(c, err, nil)
-}
+
+//func WriteResponseSuccess(c *gin.Context, resp *SvcResponse[any]) {
+//	WriteResponse(c, nil, resp)
+//}
+//func WriteResponseError(c *gin.Context, err error) {
+//	WriteResponse(c, err, nil)
+//}

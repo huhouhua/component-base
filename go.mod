@@ -12,6 +12,8 @@ require (
 	github.com/go-playground/validator/v10 v10.4.1
 	github.com/gosuri/uitable v0.0.4
 	github.com/h2non/filetype v1.1.1
+	github.com/huhouhua/errors v0.0.0-20230612120420-b2525e808bd7
+	github.com/huhouhua/log v0.0.0-20230612111507-0a4ca543e294
 	github.com/json-iterator/go v1.1.10
 	github.com/moby/term v0.0.0-20201216013528-df9cb8a40635
 	github.com/sony/sonyflake v1.0.0
@@ -32,8 +34,6 @@ require (
 	github.com/gin-contrib/sse v0.1.0 // indirect
 	github.com/go-logr/logr v0.4.0 // indirect
 	github.com/golang/protobuf v1.3.3 // indirect
-	github.com/huhouhua/errors v0.0.0-20230612120420-b2525e808bd7 // indirect
-	github.com/huhouhua/log v0.0.0-20230612111507-0a4ca543e294 // indirect
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/jinzhu/now v1.1.3 // indirect
 	github.com/leodido/go-urn v1.2.0 // indirect
