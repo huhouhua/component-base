@@ -67,7 +67,11 @@ func WriteResponseDetail(c *gin.Context, err error, data interface{}) {
 	if err != nil {
 		log.Errorf("%#+v", err)
 		coder := errors.ParseCoder(err)
-		c.JSON(coder.HTTPStatus(), Error(coder.Code(), fmt.Sprintf("%s,%s", err.Error(), coder.String()), coder.Reference()))
+		msg := err.Error()
+		if errors.IsWithCode(err) {
+			msg = errors.GetCodeMessage(err)
+		}
+		c.JSON(coder.HTTPStatus(), Error(coder.Code(), fmt.Sprintf("%s,%s", msg, coder.String()), coder.Reference()))
 		return
 	}
 	c.JSON(http.StatusOK, data)

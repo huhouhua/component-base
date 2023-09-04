@@ -1,7 +1,12 @@
 package core
 
-import "testing"
+import (
+	"github.com/huhouhua/errors"
+	"testing"
+)
 
-func TestName(t *testing.T) {
-
+func Test_WriteResponseDetail(t *testing.T) {
+	//WriteResponseDetail(nil, errors.New(""), nil)
+	WriteResponseDetail(nil, errors.WithMessage(errors.New(""), ""), nil)
+	//WriteResponseDetail(nil, errors.WithCode(400, "400"), nil)
 }
